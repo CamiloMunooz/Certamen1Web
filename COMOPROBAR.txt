@@ -1,0 +1,23 @@
+Lamentablemente, no pude hacer todas las consultas en codigo (Solo quedo listo el get /entidades, en el archivo ApplicationTest.kt), pero los comandos fueron probados exitosamente con Postman,
+haciendo uso de, por ejemplo:
+ 
+-url:http://127.0.0.1:8080/entidades (GET) 
+
+-url:http://127.0.0.1:8080/entidades/1 (GET)
+
+- (POST) http://127.0.0.1:8080/entidades, {
+    "dvRut": 1,
+    "EntidadPrincipal": "animales"
+}
+
+- (PUT) http://127.0.0.1:8080/entidades
+{
+    "dvRut": 1,
+    "EntidadPrincipal": "animalesssss"
+}
+
+- (DELETE) http://127.0.0.1:8080/entidades
+{
+    "dvRut": 1,
+    "EntidadPrincipal": "animales"
+}
