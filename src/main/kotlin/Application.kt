@@ -188,6 +188,59 @@ fun Application.module() {
             }
         }
 
+        get("/{entidad}/{relacional}/{id}"){
 
+            val entidad = call.parameters["entidad"]
+            val relacional = call.parameters["relacional"]
+            val id = call.parameters["id"]?.toInt()
+
+
+            when(entidad){
+                "personas" -> {
+
+                    call.respond(personas.find { it.id == id } ?: HttpStatusCode.NotFound)
+                }
+                "animales" -> {
+
+                    call.respond(animales.find { it.id == id } ?: HttpStatusCode.NotFound)
+                }
+                "libros" -> {
+
+                    call.respond(libros.find { it.id == id } ?: HttpStatusCode.NotFound)
+                }
+                "productos" -> {
+
+                    call.respond(productos.find { it.id == id } ?: HttpStatusCode.NotFound)
+                }
+                "vehiculos" -> {
+
+                    call.respond(vehiculos.find { it.id == id } ?: HttpStatusCode.NotFound)
+                }
+                "estudiantes" -> {
+
+                    call.respond(estudiantes.find { it.id == id } ?: HttpStatusCode.NotFound)
+                }
+                "empleados" -> {
+
+                    call.respond(empleados.find { it.id == id } ?: HttpStatusCode.NotFound)
+                }
+                "peliculas" -> {
+
+                    call.respond(peliculas.find { it.id == id } ?: HttpStatusCode.NotFound)
+                }
+                "cursos" -> {
+
+                    call.respond(cursos.find { it.id == id } ?: HttpStatusCode.NotFound)
+                }
+                "juegos" -> {
+
+                    call.respond(juegos.find { it.id == id } ?: HttpStatusCode.NotFound)
+                }
+
+                else -> call.respondText("Entidad no encontrada", status = HttpStatusCode.NotFound)
+
+            }
+
+        }
     }
 }
